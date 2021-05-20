@@ -6,5 +6,12 @@ cartos project#1\
 clear, ls\
 user,host\
 color\
+\
+\
+\
+할것\
+user,host color\
+pwd\
+cd\
 
 
