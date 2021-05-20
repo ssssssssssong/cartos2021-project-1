@@ -15,27 +15,27 @@ int main(void)
     int ret, status;
     pid_t pid, cpid;
       while (true) {
-        char *s;
-        int len;
-          
-          
-
-        printf("MyShell $ ");
-        s = fgets(command, MAX_LEN_LINE, stdin);
+          char *s;
+          int len;
+      
+          printf("MyShell $ ");
+       
+          s = fgets(command, MAX_LEN_LINE, stdin);
+                
+          command[strlen(command) - 1] = '\0'; 
+                     
         
-            
-          
-         if (s == NULL) {
-         fprintf(stderr, "fgets failed\n");
-         exit(1);
-         }
-         if(!strcmp("exit",s)) {
-            printf("종료\n");
-            exit(1);
-         }
+          if (s == NULL) {      
+              fprintf(stderr, "fgets failed\n");       
+              exit(1);        
+          }
+        
+          if(!strncmp(buf, "exit", strlen(buf))) {
+                       return -1;        
+          }         
             //break;
-            //return -1;
-        len = strlen(command);
-        printf("%d\n", len);
+            //return -1        
+          len = strlen(command);
+          printf("%d\n", len);
       }
 }
