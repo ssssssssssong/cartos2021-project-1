@@ -58,7 +58,7 @@ int main(void)
     printf("\n");
         
     while (true) {
-        
+        break;
         char *s;
         int len;
         
