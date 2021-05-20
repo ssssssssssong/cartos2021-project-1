@@ -22,7 +22,7 @@ int main(void)
     gethostname(hostname, LEN_HOSTNAME);
     printf("hostname: %s\n", hostname);
 
-    return 0;
+    
 	
 	
 	
