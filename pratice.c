@@ -53,6 +53,7 @@ int main(void)
 	  }
 	  if(strcmp(command,"ls")==0){
 		  system("ls");
+		  continue;
 	  }
 		
      
