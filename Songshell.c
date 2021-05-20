@@ -36,7 +36,7 @@ int main(void)
     welcome[13]="                  (      (        _-~    _--_    ~-_     _/   |";
     welcome[14]="                   \\      ~-____-~    _-~    ~-_    ~-_-~    /";
     welcome[15]="                     ~-_           _-~          ~-_       _-~   ";
-    welcome[16]="                        ~--______-~                ~-___-~"\n;
+    welcome[16]="                        ~--______-~                ~-___-~\n";
 
     int picture;
     for(picture=0;picture<17;picture++){
