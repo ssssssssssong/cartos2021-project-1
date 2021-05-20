@@ -68,10 +68,10 @@ int main(void)
             fprintf(stderr, "fgets failed\n");
             exit(1);
         }
-        if(strcmp(command, "exit")==0) {
+        if(!strcmp("exit",command)) {
             printf("종료\n");
-            exit(-1);
-            break;
+            exit(1);
+            //break;
             //return -1;
         }
 
