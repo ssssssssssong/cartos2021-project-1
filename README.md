@@ -2,5 +2,6 @@
 cartos project#1\
 5/20 \
 그림추가 \
-현재시각 표사
+현재시각 표시\
+clear, ls\
 
