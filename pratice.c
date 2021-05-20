@@ -38,16 +38,43 @@ int main(void)
           len = strlen(command);
           printf("%d\n", len);
           
-          if (strcmp(command, "cd") == 0) { // cd 명령어인 경우
-		       
-              if (chdir(command) == -1) { // 디렉토리를 바꿔주고 리턴
-			   
-                  fatal("change directory fail");		
-              }              		
-              return 0;	          
-          }
-
-
-
-      }
+        len = strlen(command);
+        printf("%d\n", len);
+        if (command[len - 1] == '\n') {
+            command[len - 1] = '\0'; 
+        }
+        
+        printf("[%s]\n", command);
+      
+	      
+	      
+        pid = fork();
+        if (pid < 0) {
+            fprintf(stderr, "fork failed\n");
+            exit(1);
+        } 
+        if (pid != 0) {  /* parent */
+            cpid = waitpid(pid, &status, 0);
+            if (cpid != pid) {
+                fprintf(stderr, "waitpid failed\n");        
+            }
+            printf("Child process terminated\n");
+            if (WIFEXITED(status)) {
+                printf("Exit status is %d\n", WEXITSTATUS(status)); 
+            }
+        }
+        else {  /* child */
+            ret = execve(args[0], args, NULL);
+            if (ret < 0) {
+                fprintf(stderr, "execve failed\n");   
+                return 1;
+            }
+        } 
+    }
+    return 0;
 }
+
+
+     
+
+
