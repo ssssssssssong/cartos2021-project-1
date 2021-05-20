@@ -19,7 +19,7 @@ int main(void)
         char *s;
         int len;
         
-        printf("MyShell $ ");
+        printf("SongShell $ ");
         s = fgets(command, MAX_LEN_LINE, stdin);
         if (s == NULL) {
             fprintf(stderr, "fgets failed\n");
