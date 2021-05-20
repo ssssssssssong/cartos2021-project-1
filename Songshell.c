@@ -70,7 +70,7 @@ int main(void)
         }
         if(strncmp(command, "exit", strlen(s))==0) {
             printf("종료\n");
-            break;
+            exit(-1)
             //return -1;
         }
 
