@@ -30,7 +30,7 @@ int main(void)
               exit(1);        
           }
         
-          if(!strncmp(buf, "exit", strlen(buf))) {
+          if(!strncmp(command, "exit", strlen(command))) {
                        return -1;        
           }         
             //break;
