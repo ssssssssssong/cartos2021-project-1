@@ -8,7 +8,7 @@
 #include <pwd.h>
 
 #define MAX_LEN_LINE    100
-
+#define LEN_HOSTNAME	30
 int main(void)
 {
     char command[MAX_LEN_LINE];
