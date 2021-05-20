@@ -14,7 +14,14 @@ int main(void)
     char *args[] = {command, NULL};
     int ret, status;
     pid_t pid, cpid;
+    char hostname[LEN_HOSTNAME + 1];
+    memset(hostname, 0x00, sizeof(hostname));
+    printf("username: %s\n", getpwuid(getuid())->pw_name);
 
+    gethostname(hostname, LEN_HOSTNAME);
+    printf("hostname: %s\n", hostname);
+
+    return 0;
 	
 	
 	
