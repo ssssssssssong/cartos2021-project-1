@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <time.h>
 
 #define MAX_LEN_LINE    100
 
@@ -14,38 +15,50 @@ int main(void)
     char *args[] = {command, NULL};
     int ret, status;
     pid_t pid, cpid;
+    char * welcome[17];
+    printf("                         \n");
+    welcome[0]="                    /^\\/^\\          ";
+    welcome[1]="                  _|__|  O|     ";
+    welcome[2]="         \\/     /~     \\_/ \\    ";
+    welcome[3]="          \\____|__________/  \\  ";    
+    welcome[4]="                 \\_______      \\";
+    welcome[5]="                         `\\     \\                 \\";
+    welcome[6]="                           |     |                  \\";
+
+    welcome[7]="                          /      /                    \\";
+    welcome[8]="                         /     /                      \\\\";
+    welcome[9]="                       /      /                         \\ \\";
+
+    welcome[10]="                      /     /                            \\  \\";
+
+    welcome[11]="                    /     /             _----_            \\   \\";
+    welcome[12]="                   /     /           _-~      ~-_         |   |";
+    welcome[13]="                  (      (        _-~    _--_    ~-_     _/   |";
+    welcome[14]="                   \\      ~-____-~    _-~    ~-_    ~-_-~    /";
+    welcome[15]="                     ~-_           _-~          ~-_       _-~   ";
+    welcome[16]="                        ~--______-~                ~-___-~";
+
+    int picture;
+    for(picture=0;picture<17;picture++){
+        printf("%s",welcome[picture]);
+        printf("\n");
+    };
     
+    struct tm *clock;
+    time_t current;
+
+
+
+
+    time(& current);
+
+    clock=localtime(& current); 
+
+    printf("%d시 %d분 %d초\n",clock->tm_hour%12,clock->tm_min,clock->tm_sec);
+    printf("\n");
+        
     while (true) {
         
-        char * welcome[17];
-        printf("                         \n");
-        welcome[0]="                    /^\\/^\\          ";
-        welcome[1]="                  _|__|  O|     ";
-        welcome[2]="         \\/     /~     \\_/ \\    ";
-        welcome[3]="          \\____|__________/  \\  ";    
-        welcome[4]="                 \\_______      \\";
-        welcome[5]="                         `\\     \\                 \\";
-        welcome[6]="                           |     |                  \\";
-
-        welcome[7]="                          /      /                    \\";
-        welcome[8]="                         /     /                      \\\\";
-        welcome[9]="                       /      /                         \\ \\";
-
-        welcome[10]="                      /     /                            \\  \\";
-
-        welcome[11]="                    /     /             _----_            \\   \\";
-        welcome[12]="                   /     /           _-~      ~-_         |   |";
-        welcome[13]="                  (      (        _-~    _--_    ~-_     _/   |";
-        welcome[14]="                   \\      ~-____-~    _-~    ~-_    ~-_-~    /";
-        welcome[15]="                     ~-_           _-~          ~-_       _-~   ";
-        welcome[16]="                        ~--______-~                ~-___-~";
-
-        int picture;
-        for(picture=0;picture<17;picture++){
-            printf("%s",welcome[picture]);
-            printf("\n");
-        };
-    printf("\n");
         char *s;
         int len;
         
@@ -55,7 +68,10 @@ int main(void)
             fprintf(stderr, "fgets failed\n");
             exit(1);
         }
-        
+        if(!strncmp(command, "exit", strlen(command))) {
+            return -1;
+        }
+
         len = strlen(command);
         printf("%d\n", len);
         if (command[len - 1] == '\n') {
