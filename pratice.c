@@ -51,7 +51,10 @@ int main(void)
 		  system("clear");
 		  continue;
 	  }
-	 
+	  if(strcmp(command,"ls")==0){
+		  system("ls");
+	  }
+		
      
 	   len = strlen(command);  
 
