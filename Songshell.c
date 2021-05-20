@@ -16,12 +16,13 @@ int main(void)
     pid_t pid, cpid;
     
     while (true) {
+        
         char * welcome[17];
-        printf("                Happy Chinese Lunar New Year!                                            \n");
-        welcome[0]="                    /^\\/^\\      1     ";
-        welcome[1]="                  _|__|  ;
-        welcome[2]="         \\/     /~     \\_/ \\     ";
-        welcome[3]="          \\____|__________/  \\  3";    
+        printf("                         \n");
+        welcome[0]="                    /^\\/^\\          ";
+        welcome[1]="                  _|__|  O|     ";
+        welcome[2]="         \\/     /~     \\_/ \\    ";
+        welcome[3]="          \\____|__________/  \\  ";    
         welcome[4]="                 \\_______      \\";
         welcome[5]="                         `\\     \\                 \\";
         welcome[6]="                           |     |                  \\";
@@ -39,6 +40,12 @@ int main(void)
         welcome[15]="                     ~-_           _-~          ~-_       _-~   ";
         welcome[16]="                        ~--______-~                ~-___-~";
 
+        int picture;
+        for(picture=0;picture<17;picture++){
+            printf("%s",welcome[picture]);
+            printf("\n");
+        };
+    printf("\n");
         char *s;
         int len;
         
