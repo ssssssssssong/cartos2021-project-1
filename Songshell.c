@@ -68,6 +68,8 @@ int main(void)
             fprintf(stderr, "fgets failed\n");
             exit(1);
         }
+                       
+        command[strlen(command) - 1] = '\0'; 
         if(!strcmp("exit",command)) {
             printf("종료\n");
             exit(1);
