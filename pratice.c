@@ -14,7 +14,7 @@ int main(void)
     char *args[] = {command, NULL};
     int ret, status;
     pid_t pid, cpid;
-      while (true) {
+    while (true) {
           char *s;
           int len;
       
@@ -32,27 +32,29 @@ int main(void)
         
           if(!strncmp(command, "exit", strlen(command))) {
                        return -1;        
-          }         
-            //break;
-            //return -1        
-          len = strlen(command);
-          printf("%d\n", len);
-          
-        len = strlen(command);
-        printf("%d\n", len);
-        if (command[len - 1] == '\n') {
-            command[len - 1] = '\0'; 
-        }
-        
-        printf("[%s]\n", command);
+     
+	  }         
       
-	      
-	      
-        pid = fork();
-        if (pid < 0) {
-            fprintf(stderr, "fork failed\n");
-            exit(1);
-        } 
+	 
+     
+	   len = strlen(command);  
+
+	   printf("%d\n", len);
+                  
+	   if (command[len - 1] == '\n') {
+	   	command[len - 1] = '\0'; 
+	   }
+ 
+	   printf("[%s]\n", command);
+      
+	  	      
+ 
+	   pid = fork();
+        
+	   if (pid < 0) {
+           	fprintf(stderr, "fork failed\n");
+            	exit(1);
+          } 
         if (pid != 0) {  /* parent */
             cpid = waitpid(pid, &status, 0);
             if (cpid != pid) {
@@ -67,8 +69,12 @@ int main(void)
             ret = execve(args[0], args, NULL);
             if (ret < 0) {
                 fprintf(stderr, "execve failed\n");   
-                return 1;
+                return 1;		 
             }
+	    if (execlp(command,command,NULL)== -1){
+		    printf("Command is failed\n");
+		    exit(0);
+	    }
         } 
     }
     return 0;
