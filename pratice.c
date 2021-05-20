@@ -48,8 +48,8 @@ int main(void)
      
 	  }         
           if(strcmp(command,"clear")==0){
-		  system("clear);
-			 }
+		  system("clear");
+	  }
 	 
      
 	   len = strlen(command);  
