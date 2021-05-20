@@ -69,6 +69,7 @@ int main(void)
             exit(1);
         }
         if(!strncmp(command, "exit", strlen(command))) {
+            printf("종료\n");
             return -1;
         }
 
