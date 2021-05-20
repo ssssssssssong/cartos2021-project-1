@@ -6,8 +6,10 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <time.h>
+#include <pwd.h>
 
 #define MAX_LEN_LINE    100
+#define LEN_HOSTNAME	30
 
 int main(void)
 {
@@ -44,10 +46,17 @@ int main(void)
         printf("\n");
     };
     
+    char hostname[LEN_HOSTNAME + 1];
+    memset(hostname, 0x00, sizeof(hostname));
+    printf("username: %s\n", getpwuid(getuid())->pw_name);
+
+    gethostname(hostname, LEN_HOSTNAME);
+    printf("hostname: %s\n", hostname);
+
+    
+    
     struct tm *clock;
     time_t current;
-
-
 
 
     time(& current);
@@ -62,7 +71,7 @@ int main(void)
         char *s;
         int len;
         
-        printf("SongShell $ ");
+        printf("\033[1;34m SongShell $~\033[0m");
         s = fgets(command, MAX_LEN_LINE, stdin);
         if (s == NULL) {
             fprintf(stderr, "fgets failed\n");
