@@ -49,6 +49,7 @@ int main(void)
 	  }         
           if(strcmp(command,"clear")==0){
 		  system("clear");
+		  continue;
 	  }
 	 
      
