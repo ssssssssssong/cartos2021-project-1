@@ -7,6 +7,15 @@
 #include <sys/wait.h>
 
 #define MAX_LEN_LINE    100
+void cd(char *d);
+void cd(char *d){
+	char * name = "PWD"; //string PWD
+  	char cwd[256]; // holder for current directory
+  	char * newCurrent = getcwd(cwd, sizeof(cwd)); //get the current dir and put it in cwd
+
+  	chdir(d); // change the directory
+  	setenv(name, newCurrent,1); //set new pwd
+}	
 
 int main(void)
 {
@@ -14,15 +23,6 @@ int main(void)
     char *args[] = {command, NULL};
     int ret, status;
     pid_t pid, cpid;
-    void cd(char *d);
-    void cd(char *d){
-  	char * name = "PWD"; //string PWD
-  	char cwd[256]; // holder for current directory
-  	char * newCurrent = getcwd(cwd, sizeof(cwd)); //get the current dir and put it in cwd
-
-  	chdir(d); // change the directory
-  	setenv(name, newCurrent,1); //set new pwd
-     }	
 
 	
 	
