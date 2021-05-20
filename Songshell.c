@@ -36,7 +36,7 @@ int main(void)
     welcome[13]="                  (      (        _-~    _--_    ~-_     _/   |";
     welcome[14]="                   \\      ~-____-~    _-~    ~-_    ~-_-~    /";
     welcome[15]="                     ~-_           _-~          ~-_       _-~   ";
-    welcome[16]="                        ~--______-~                ~-___-~";
+    welcome[16]="                        ~--______-~                ~-___-~"\n;
 
     int picture;
     for(picture=0;picture<17;picture++){
@@ -54,7 +54,7 @@ int main(void)
 
     clock=localtime(& current); 
 
-    printf("%d시 %d분 %d초\n",clock->tm_hour%12,clock->tm_min,clock->tm_sec);
+    printf("현재시간 = %d시 %d분 %d초\n",clock->tm_hour%12,clock->tm_min,clock->tm_sec);
     printf("\n");
         
     while (true) {
