@@ -17,14 +17,24 @@ int main(void)
       while (true) {
         char *s;
         int len;
-        
+          
+          
+
         printf("MyShell $ ");
         s = fgets(command, MAX_LEN_LINE, stdin);
-        if (s == NULL) {
-            fprintf(stderr, "fgets failed\n");
-            exit(1);
-        }
         
+            
+          
+         if (s == NULL) {
+         fprintf(stderr, "fgets failed\n");
+         exit(1);
+         }
+         if(!strcmp("exit",s)) {
+            printf("종료\n");
+            exit(1);
+         }
+            //break;
+            //return -1;
         len = strlen(command);
         printf("%d\n", len);
       }
