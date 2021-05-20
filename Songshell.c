@@ -83,7 +83,7 @@ int main(void)
             continue;
         }
         
-        if(strcmp(command,"clear")==0{
+        if(strcmp(command,"clear")==0){
             system("clear");
             continue;
         }
@@ -117,6 +117,6 @@ int main(void)
                 return 1;
             }
         } 
-    }
+    //}
     return 0;
 }
