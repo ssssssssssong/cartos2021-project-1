@@ -73,10 +73,20 @@ int main(void)
         if(!strcmp("exit",command)) {
             printf("종료\n");
             exit(1);
+        
             //break;
             //return -1;
         }
-
+        
+        if(strcmp(command,"ls") ==0){
+            system("ls");
+            continue;
+        }
+        
+        if(strcmp(command,"clear")==0{
+            system("clear");
+            continue;
+        }
         len = strlen(command);
         printf("%d\n", len);
         if (command[len - 1] == '\n') {
