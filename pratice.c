@@ -37,5 +37,17 @@ int main(void)
             //return -1        
           len = strlen(command);
           printf("%d\n", len);
+          
+          if (strcmp(cline[0], "cd") == 0) { // cd 명령어인 경우
+		       
+              if (chdir(cline[1]) == -1) { // 디렉토리를 바꿔주고 리턴
+			   
+                  fatal("change directory fail");		
+              }              		
+              return 0;	          
+          }
+
+
+
       }
 }
