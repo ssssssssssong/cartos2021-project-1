@@ -30,7 +30,7 @@ int main(void)
           char *s;
           int len;
       
-          printf("MyShell $ ");
+          printf(""\033[1;33m MyShell $~\033[0m ");
        
           s = fgets(command, MAX_LEN_LINE, stdin);
                 
