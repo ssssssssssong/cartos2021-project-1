@@ -47,7 +47,9 @@ int main(void)
                        return -1;        
      
 	  }         
-      
+          if(strcmp(command,"clear")==0){
+		  system("clear);
+			 }
 	 
      
 	   len = strlen(command);  
@@ -60,8 +62,8 @@ int main(void)
  
 	   printf("[%s]\n", command);
       
-	   if (!strcmp(args[0],"cd")) { //change directory
-           	cd(args[1]); //call the helper function
+	   if (!strcmp(command,"cd")) { //change directory
+           	cd(command); //call the helper function
             	continue;
            }	      
  
