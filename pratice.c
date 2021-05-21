@@ -17,10 +17,10 @@ int main(void)
     pid_t pid, cpid;
     char hostname[LEN_HOSTNAME + 1];
     memset(hostname, 0x00, sizeof(hostname));
-    printf("\033[1;32m username: %s\033[0m \n", getpwuid(getuid())->pw_name);
+    printf("\033[1;32m username:\033[0m 033[1;31m %s \033[0m \n", getpwuid(getuid())->pw_name);
 
     gethostname(hostname, LEN_HOSTNAME);
-    printf("\033[1;32m hostname: %s\033[0m \n", hostname);
+    printf("\033[1;32m hostname:\033[0m 033[1;31m %s \033[0m \n", hostname);
 
     
 	
