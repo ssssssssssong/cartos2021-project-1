@@ -6,9 +6,19 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <pwd.h>
+#include <header.h>
 
 #define MAX_LEN_LINE    100
 #define LEN_HOSTNAME	30
+void cd(int a, char *b){
+	char *path;
+	if (a>1) path = a;
+	else if((path = (char*)getenv("llll"))==NULL) path = ".";
+	if(chdif(path) <0){
+		printf("오류");
+	}
+		
+	
 int main(void)
 {
     char command[MAX_LEN_LINE];
@@ -54,9 +64,9 @@ int main(void)
 		  system("ls");
 		  continue;
 	  }
-	  if(strcmp(command,"cd")==0){
-		  system("cd");
-		  continue;
+	  if(!strcmp("cd",cmdvector[0])){
+		  chdir(cmdvector[1]);
+		  return 0;
 	  }
      
 	   len = strlen(command);  
