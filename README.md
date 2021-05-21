@@ -5,12 +5,12 @@ cartos project#1\
 현재시각 표시\
 clear, ls\
 user,host\
-color\
-\
+songshell color\
+color of user\
 \
 \
 할것\
-user,host color\
+
 pwd\
 cd\
 
