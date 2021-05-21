@@ -59,7 +59,7 @@ int main(void)
 		  continue;
 	  }
 	  if(strcmp(command[0],"cd")){
-		  chdir(cmdvector[1]);
+		  chdir(command[1]);
 		  //return
 		 //continue;
 	  }
