@@ -10,21 +10,8 @@
 
 #define MAX_LEN_LINE    100
 #define LEN_HOSTNAME	30
-bool cd( int argc, char* argv[] ); 
-bool cd(int argc, char* argv[]){
-	if (argc == 1) {
-		chdir(getenv("home");
-	}
-			    
-	
-	else if(argc ==2){
-		if(chdir(argv[1])){
-			printf("No such file or directory");
-		}
-	else
-		printf("USAGE:cd[dir]\n");
 
-		
+			
 	
 int main(void)
 {
@@ -39,8 +26,8 @@ int main(void)
     gethostname(hostname, LEN_HOSTNAME);
     printf("\033[1;32m hostname:\033[0m \033[1;35m %s \033[0m \n", hostname);
 
-    
-	
+
+    	
 	
 	
     while (true) {
@@ -71,10 +58,10 @@ int main(void)
 		  system("ls");
 		  continue;
 	  }
-	  if(!strcmp("cd",cmdvector[0])){
+	  if(strcmp(command[0],"cd")){
 		  chdir(cmdvector[1]);
-		  #return 0;
-		  continue;
+		  #return
+		  #continue;
 	  }
      
 	   len = strlen(command);  
