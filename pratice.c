@@ -6,17 +6,24 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <pwd.h>
-#include "header.h"
+
 
 #define MAX_LEN_LINE    100
 #define LEN_HOSTNAME	30
-void cd(int a, char *b){
-	char *path;
-	if (a>1) path = a;
-	else if((path = (char*)getenv("llll"))==NULL) path = ".";
-	if(chdif(path) <0){
-		printf("오류");
+bool cd( int argc, char* argv[] ); 
+bool cd(int argc, char* argv[]){
+	if (argc == 1) {
+		chdir(getenv("home");
 	}
+			    
+	
+	else if(argc ==2){
+		if(chdir(argv[1])){
+			printf("No such file or directory");
+		}
+	else
+		printf("USAGE:cd[dir]\n");
+
 		
 	
 int main(void)
@@ -66,7 +73,8 @@ int main(void)
 	  }
 	  if(!strcmp("cd",cmdvector[0])){
 		  chdir(cmdvector[1]);
-		  return 0;
+		  #return 0;
+		  continue;
 	  }
      
 	   len = strlen(command);  
