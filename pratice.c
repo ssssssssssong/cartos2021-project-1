@@ -60,8 +60,8 @@ int main(void)
 	  }
 	  if(strcmp(command[0],"cd")){
 		  chdir(cmdvector[1]);
-		  #return
-		  #continue;
+		  //return
+		 //continue;
 	  }
      
 	   len = strlen(command);  
