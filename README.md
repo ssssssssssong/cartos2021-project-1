@@ -9,6 +9,9 @@ songshell color\
 color of user\
 exit\
 \
+\
+\
+window wsl2
 
 
 
