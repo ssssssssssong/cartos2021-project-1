@@ -9,9 +9,6 @@ songshell color\
 color of user\
 \
 \
-할것\
 
-pwd(fail)\
-cd(fail\
 
 
