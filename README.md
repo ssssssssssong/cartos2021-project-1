@@ -11,7 +11,12 @@ exit\
 \
 \
 \
-window wsl2
+window wsl2\
+\
+\
+\
+해볼거\
+cd pwd...
 
 
 
