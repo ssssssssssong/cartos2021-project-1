@@ -7,7 +7,7 @@ clear, ls\
 user,host\
 songshell color\
 color of user\
-\
+exit\
 \
 
 
